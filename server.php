@@ -50,6 +50,15 @@ $discs_json = file_get_contents('dischi.json');
 // lo converto in struttura php
 $discs = json_decode($discs_json, true);
 
+// di default stampo tutti i dischi
+$response = $discs;
+
+// se $_GET['discIndex'] è settato allora torno un disco specifico
+if (isset($_GET['discIndex'])) {
+    $discIndex  = intval($_GET['discIndex']);
+    $response = $discs[$discIndex];
+}
+
 header('Content-Type: application/json');
 
-echo json_encode($discs);
+echo json_encode($response);
