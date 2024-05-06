@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             discs: [],
+            isOverlayOpen: false
         }
     },
     methods: {
@@ -13,7 +14,13 @@ createApp({
                     this.discs = response.data;
                     console.log(this.discs);
                 })
-        }
+        },
+        openOverlay() {
+            this.isOverlayOpen = true;
+        },
+        closeOverlay() {
+            this.isOverlayOpen = false;
+        },
     },
     mounted() {
         this.getDiscsFromApi();
