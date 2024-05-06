@@ -7,3 +7,7 @@ main {
     background-color: #102030;
     color: #fff;
 }
+
+.card:hover {
+    transform: scale(1.1);
+}
