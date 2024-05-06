@@ -26,15 +26,32 @@
             <div class="container-lg">
                 <div class="row justify-content-center p-4">
                     <template v-for="disc in discs">
-                        <div class="card col-4 col-md-3 col-lg-2 p-3 pb-2 m-3">
+                        <div @click="openOverlay()" class="card col-4 col-md-3 col-lg-2 p-3 pb-2 m-3">
                             <img :src="disc.poster" class="card-img-top" alt="">
                             <div class="card-body pb-0 text-center">
                                 <div class="card-text fw-bold">{{ disc.title }}</div>
                                 <div class="card-text">{{ disc.author }}</div>
                                 <div class="card-text fw-bold">{{ disc.year }}</div>
                             </div>
+                        </div>
                     </template>
+                    <div :class="[isOverlayOpen ? 'd-flex' : 'd-none']" class="ms-overlay vstack rounded-5 text-white">
+                        <div class="d-flex justify-content-end p-3">
+                            <div @click="closeOverlay()" class="border rounded-3 px-3 py-2 text-center" role="button">X</div>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center h-100">
+                            <div class="card col-4 col-md-3 col-lg-2 p-3 pb-2 m-3">
+                                <img src="disc.poster" class="card-img-top" alt="">
+                                <div class="card-body pb-0 text-center">
+                                    <div class="card-text fw-bold">disc.title</div>
+                                    <div class="card-text">disc.author</div>
+                                    <div class="card-text fw-bold">disc.year</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
     </div>
     </main>
