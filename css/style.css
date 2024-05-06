@@ -1,6 +1,8 @@
 main {
     background-color: #1C2D3C;
-    height: 100%;
+    height: calc(100vh - 46px);
+    overflow: auto;
+    position: relative;
 }
 
 .card {
@@ -10,4 +12,15 @@ main {
 
 .card:hover {
     transform: scale(1.1);
+}
+
+.ms-overlay {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #102031;
+    opacity: 0.8;
 }
