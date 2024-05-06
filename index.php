@@ -11,7 +11,7 @@
     <!-- bootstrap css  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>PHP Dischi</title>
 </head>
 
@@ -23,19 +23,21 @@
             </div>
         </header>
         <main>
-            <div class="container-fluid">
-                <div class="row p-4">
-                    <div class="card col-4 p-4 pb-0">
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/51sBr4IWDwL.jpg" class="card-img-top" alt="">
-                        <div class="card-body text-center">
-                            <div class="card-text fw-bold">titolo</div>
-                            <div class="card-text">autore</div>
-                            <div class="card-text fw-bold">data</div>
-                        </div>
-                    </div>
+            <div class="container-lg">
+                <div class="row justify-content-center p-4">
+                    <template v-for="disc in discs">
+                        <div class="card col-4 col-md-3 col-lg-2 p-3 pb-2 m-3">
+                            <img :src="disc.poster" class="card-img-top" alt="">
+                            <div class="card-body pb-0 text-center">
+                                <div class="card-text fw-bold">{{ disc.title }}</div>
+                                <div class="card-text">{{ disc.author }}</div>
+                                <div class="card-text fw-bold">{{ disc.year }}</div>
+                            </div>
+                    </template>
                 </div>
             </div>
-        </main>
+    </div>
+    </main>
 
 
     </div>
