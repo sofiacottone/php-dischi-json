@@ -4,7 +4,7 @@ createApp({
     data() {
         return {
             discs: [],
-            isOverlayOpen: false
+            activeDisc: null
         }
     },
     methods: {
@@ -12,14 +12,22 @@ createApp({
             axios.get('server.php')
                 .then((response) => {
                     this.discs = response.data;
-                    console.log(this.discs);
                 })
         },
-        openOverlay() {
-            this.isOverlayOpen = true;
+        openOverlay(clickedIndex) {
+            const queryParams = {
+                discIndex: clickedIndex
+            };
+
+            axios.get('server.php', {
+                params: queryParams
+            })
+                .then((response) => {
+                    this.activeDisc = response.data;
+                })
         },
         closeOverlay() {
-            this.isOverlayOpen = false;
+            this.activeDisc = null;
         },
     },
     mounted() {
