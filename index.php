@@ -41,12 +41,12 @@
                         <div class="d-flex justify-content-end p-3">
                             <div @click="closeOverlay()" class="border rounded-3 px-3 py-2 text-center" role="button">X</div>
                         </div>
-                        <div class="d-flex justify-content-center align-items-center">
+                        <div class="d-flex justify-content-center align-items-center mt-5">
                             <div class="ms-overlay-card p-3 pb-2 m-3">
                                 <img :src="activeDisc.poster" :alt="activeDisc.title">
                                 <div class="pb-0 text-center">
-                                    <div class="fw-bold">{{ activeDisc.title }}</div>
-                                    <div class="">{{ activeDisc.author }}
+                                    <div class="pt-2 fw-bold">{{ activeDisc.title }}</div>
+                                    <div class="py-2">{{ activeDisc.author }}
                                     </div>
                                     <div class="fw-bold">{{ activeDisc.year }}</div>
                                 </div>

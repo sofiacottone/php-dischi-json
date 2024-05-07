@@ -21,13 +21,14 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #102031;
+    background-color: #102031f5;
 }
 
 .ms-overlay-card {
     width: 40%;
     max-height: 550px;
     object-fit: contain;
+    text-align: center;
 }
 
 .ms-overlay-card img {
